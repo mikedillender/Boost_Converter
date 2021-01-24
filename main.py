@@ -25,12 +25,18 @@ v3=0
 il=0
 ic=0
 vc=0
+vl=0
+
 for tstep in range(np.floor(maxtime/step)):
     t=tstep*step
     if (t%(1/f)>(1/f)*.5):
         ''' Switch activated '''
+        il_approaches=vs/rs
+        on=True
     else:
         ''' Switch Off '''
+        
+        on=False
 
 
 
