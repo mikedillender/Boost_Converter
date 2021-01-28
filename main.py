@@ -23,19 +23,38 @@ v1=0
 v2=0
 v3=0
 il=0
+il0=0
 ic=0
+ic0=0
 vc=0
+vc0=0
 vl=0
+vl0=0
+t0=0
 
 for tstep in range(np.floor(maxtime/step)):
     t=tstep*step
     if (t%(1/f)>(1/f)*.5):
+        if(not on):
+            t0=t
+            ic0=ic
+            il0=il
+            vc0=vc
+            vl0=vl
+            on = True
         ''' Switch activated '''
         il_approaches=vs/rs
-        on=True
+
     else:
+        if (not on):
+            t0 = t
+            ic0 = ic
+            il0 = il
+            vc0 = vc
+            vl0 = vl
+
         ''' Switch Off '''
-        
+
         on=False
 
 
